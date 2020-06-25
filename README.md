@@ -1,6 +1,4 @@
 
-![Logo](https://i.imgur.com/tEk3mT5.jpg)
-
 Under develompent... 
 
 # Table of Contents
