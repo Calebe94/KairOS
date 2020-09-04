@@ -65,13 +65,15 @@ void setup()
     splash_screen_stage_update( "init serial", 10 );
 
     splash_screen_stage_update( "init spiff", 20 );
-    if ( !SPIFFS.begin() ) {        
+    if ( !SPIFFS.begin() ) 
+    {        
         splash_screen_stage_update( "format spiff", 30 );
         SPIFFS.format();
         splash_screen_stage_update( "format spiff done", 40 );
         delay(500);
         bool remount_attempt = SPIFFS.begin();
-        if (!remount_attempt){
+        if (!remount_attempt)
+        {
             splash_screen_stage_update( "Err: SPIFF Failed", 0 );
             delay(3000);
             ESP.restart();
@@ -98,7 +100,9 @@ void setup()
      *
      */
     if ( wifictl_get_autoon() && ( pmu_is_charging() || pmu_is_vbus_plug() || ( pmu_get_battery_voltage() > 3400) ) )
+    {
         wifictl_on();
+    }
 
     // enable to store data in normal heap
     heap_caps_malloc_extmem_enable( 16*1024 );
