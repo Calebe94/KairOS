@@ -25,17 +25,26 @@ The KairOS Architecture is arranged in the scheme showed below:
 
 *The structure used may be changed in the future
 
-# Setup
+## Setup
 
 Comming soon...
 
-## Strategy
+## Peripherals
 
-Coming soon...
+- Main chip: ESP32
+  - Flash: 16MB
+  - PSRAM: 8MB
+  - SRAM: 520KiB
 
-## TODO
+- Display: ST7789V (1.54 inch LCD with capacitive touch screen)
+- PMU(Power Manager Unit): AXP202
+- Triaxial Accelerometer: BMA423
+- RTC PCF8563
+- Vibration Motor
+- Speaker
+- Infra red sensor.
 
-Coming soon...
+More info on [Lilygo TTGO T-Watch](https://translate.google.com/translate?hl=&sl=zh-CN&tl=en&u=https%3A%2F%2Flilygo-t-watch-document.readthedocs-hosted.com%2Fzh%2Flatest%2Findex.html&sandbox=1).
 
 # Team
 

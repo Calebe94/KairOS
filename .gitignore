@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+.pio
+.vscode
+deploy.sh
+.gitignore
+data/tile_map.ods
