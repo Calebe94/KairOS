@@ -29,7 +29,7 @@
 #include "json_psram_allocator.h"
 
 #include "gui/statusbar.h"
-#include "webserver/webserver.h"
+// #include "webserver/webserver.h"
 
 bool wifi_init = false;
 EventGroupHandle_t wifictl_status = NULL;
@@ -125,7 +125,7 @@ void wifictl_setup( void ) {
         wifictl_send_event_cb( WIFICTL_CONNECT, (char*)WiFi.SSID().c_str() );
         wifictl_send_event_cb( WIFICTL_CONNECT_IP, (char*)WiFi.localIP().toString().c_str() );
         if ( wifictl_config.webserver ) {
-          asyncwebserver_start();
+          // asyncwebserver_start();
         }
     }, WiFiEvent_t::SYSTEM_EVENT_STA_GOT_IP );
 
@@ -142,7 +142,7 @@ void wifictl_setup( void ) {
     }, WiFiEvent_t::SYSTEM_EVENT_WIFI_READY );
 
     WiFi.onEvent([](WiFiEvent_t event, WiFiEventInfo_t info) {
-        asyncwebserver_end();
+        // asyncwebserver_end();
         wifictl_clear_event( WIFICTL_ACTIVE | WIFICTL_CONNECT | WIFICTL_OFF_REQUEST | WIFICTL_ON_REQUEST | WIFICTL_SCAN | WIFICTL_WPS_REQUEST );
         wifictl_send_event_cb( WIFICTL_OFF, (char *)"" );
     }, WiFiEvent_t::SYSTEM_EVENT_STA_STOP );
@@ -463,7 +463,7 @@ void wifictl_start_wps( void ) {
 
   log_i("start WPS");
 
-  esp_wps_config.crypto_funcs = &g_wifi_default_wps_crypto_funcs;
+  // esp_wps_config.crypto_funcs = &g_wifi_default_wps_crypto_funcs;
   esp_wps_config.wps_type = ESP_WPS_MODE;
   strlcpy( esp_wps_config.factory_info.manufacturer, ESP_MANUFACTURER, sizeof( esp_wps_config.factory_info.manufacturer ) );
   strlcpy( esp_wps_config.factory_info.model_number, ESP_MODEL_NUMBER, sizeof( esp_wps_config.factory_info.model_number ) );
