@@ -293,7 +293,7 @@ static void exit_wifi_password_event_cb( lv_obj_t * obj, lv_event_t event ) {
 
 lv_obj_t *wifi_autoon_onoff;
 lv_obj_t *wifi_webserver_onoff;
-static void wps_start_event_handler( lv_obj_t * obj, lv_event_t event );
+// static void wps_start_event_handler( lv_obj_t * obj, lv_event_t event );
 static void wifi_autoon_onoff_event_handler( lv_obj_t * obj, lv_event_t event );
 static void wifi_webserver_onoff_event_handler( lv_obj_t * obj, lv_event_t event );
 
@@ -352,11 +352,11 @@ void wlan_setup_tile_setup( uint32_t wifi_setup_tile_num ) {
     lv_label_set_text( wifi_webserver_label, "enable webserver");
     lv_obj_align( wifi_webserver_label, wifi_webserver_onoff_cont, LV_ALIGN_IN_LEFT_MID, 5, 0 );
 
-    lv_obj_t *wps_btn = lv_btn_create( wifi_setup_tile, NULL);
-    lv_obj_set_event_cb( wps_btn, wps_start_event_handler );
-    lv_obj_align( wps_btn, wifi_webserver_onoff_cont, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
-    lv_obj_t *wps_btn_label = lv_label_create( wps_btn, NULL );
-    lv_label_set_text( wps_btn_label, "start WPS");
+    // lv_obj_t *wps_btn = lv_btn_create( wifi_setup_tile, NULL);
+    // lv_obj_set_event_cb( wps_btn, wps_start_event_handler );
+    // lv_obj_align( wps_btn, wifi_webserver_onoff_cont, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
+    // lv_obj_t *wps_btn_label = lv_label_create( wps_btn, NULL );
+    // lv_label_set_text( wps_btn_label, "start WPS");
 
     if ( wifictl_get_autoon() )
         lv_switch_on( wifi_autoon_onoff, LV_ANIM_OFF);
@@ -371,12 +371,12 @@ void wlan_setup_tile_setup( uint32_t wifi_setup_tile_num ) {
     blectl_register_cb( BLECTL_MSG, bluetooth_message_event_cb );
 }
 
-static void wps_start_event_handler( lv_obj_t * obj, lv_event_t event ) {
-    switch( event ) {
-        // case( LV_EVENT_CLICKED ):       wifictl_start_wps();
-                                        break;
-    }
-}
+// static void wps_start_event_handler( lv_obj_t * obj, lv_event_t event ) {
+//     switch( event ) {
+//         case( LV_EVENT_CLICKED ):       wifictl_start_wps();
+//                                         break;
+//     }
+// }
 
 static void enter_wifi_setup_event_cb( lv_obj_t * obj, lv_event_t event ) {
     switch( event ) {
