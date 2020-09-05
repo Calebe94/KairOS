@@ -30,7 +30,7 @@
 
 #include "hardware/wifictl.h"
 #include "hardware/motor.h"
-#include "webserver/webserver.h"
+// #include "webserver/webserver.h"
 #include "hardware/blectl.h"
 #include "hardware/json_psram_allocator.h"
 
@@ -373,7 +373,7 @@ void wlan_setup_tile_setup( uint32_t wifi_setup_tile_num ) {
 
 static void wps_start_event_handler( lv_obj_t * obj, lv_event_t event ) {
     switch( event ) {
-        case( LV_EVENT_CLICKED ):       wifictl_start_wps();
+        // case( LV_EVENT_CLICKED ):       wifictl_start_wps();
                                         break;
     }
 }
@@ -403,10 +403,10 @@ static void wifi_webserver_onoff_event_handler( lv_obj_t * obj, lv_event_t event
     switch (event) {
         case (LV_EVENT_VALUE_CHANGED):  wifictl_set_webserver( lv_switch_get_state( obj ) );
                                         if ( lv_switch_get_state( obj ) ) {
-                                            asyncwebserver_start();
+                                            // asyncwebserver_start();
                                         }
                                         else {
-                                            asyncwebserver_end();
+                                            // asyncwebserver_end();
                                         }
                                         break;
     }
